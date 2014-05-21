@@ -14,7 +14,7 @@ function browserRedirect() {
 		
 	} else {
 		alert("网站仅支持移动设备。");
-		window.location = '404.html';
+		window.location = 'np.html';
 	}
 }
 browserRedirect();

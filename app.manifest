@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# VER 125
+# VER 126
 
 CACHE:
 css/reset.css
@@ -27,7 +27,7 @@ js/iscroll.js
 js/utf.js
 js/jquery-2.1.1.min.js
 
-404.html
+np.html
 
 NETWORK:
 *
