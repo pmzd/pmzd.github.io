@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html> <!--<![endif]-->
+
+
+<!-- ***********************************************************************
+开发人员书写规范:
+1.所有缩进都用 TAB， 而不是空格。
+1.非必要，禁止用行内样式例如 <div style="display:block"> 
+
+
+浏览器兼容：
+	IE10+
+	FireFox
+	Webkit内核浏览器:
+		Chrome,
+		Opear(WebKit版),
+		360浏览器(7.0+),
+		360急速浏览器,
+		搜狗浏览器,
+		115浏览器,
+		UC桌面浏览器,
+		枫树浏览器,
+		Safari 5.1+
+		Safari 7+ (Mac OS)
+注:由于国内IE6-7份额已经非常低，基本是测试人员跟一些非常旧的政府机构，所以不做兼容。
+*********************************************************************** -->
+<head>
+
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8">
+	<title>光影社</title>
+	<meta name="description" content="">
+	<meta name="author" content="JayChen">
+	<!-- 让IE浏览器用最高级内核渲染页面 还有用 Chrome 框架的页面用webkit 内核
+	================================================== -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- IOS6全屏 Chrome高版本全屏
+	================================================== -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes"> 
+	<!-- 让360双核浏览器用webkit内核渲染页面
+	================================================== -->
+	<meta name="renderer" content="webkit">
+	<!-- Mobile Specific Metas
+	================================================== -->
+	<!-- !!!注意 minimal-ui 是IOS7.1的新属性，最小化浏览器UI
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"> -->
+	<meta name="viewport" content="maximum-scale=1">
+	<!-- CSS
+	================================================== -->
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<!-- Favicons
+	================================================== -->
+	<!--<link rel="shortcut icon" href="favicon.ico" >-->
+	<!-- Android 主屏图标
+	================================================== -->	
+	<!--<link rel="icon" sizes="196x196" href="touch-icon.png">-->
+	<!-- IOS 主屏图标
+	================================================== -->
+	<!--<link rel="apple-touch-icon" href="touch-icon-iphone.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">-->
+		
+</head>
+<body>
+<div class="app height_min_winheight">
+	<!-- Everything started here -->
+	<div class="app_containt">
+		<div class="app_head" id="app_head">
+			<div class="app_head_top">
+				<div class="midwidth">
+					<a href="#" class="ts_logo"></a>
+					<div class="ts_advisory">
+						<div class="hotline">
+							<p class="hlp1">客服热线</p>
+							<p class="hlp2 userSelectable">400-600-660</p>
+						</div>
+						<div class="online_consulting">在线咨询</div>
+					</div>
+				</div>
+			</div>
+			<div class="app_head_nav">
+				<div class="midwidth clearfix">
+					<a href="#" class="navLinks cur">首页</a>
+					<a href="#" class="navLinks">成功案例</a>
+					<a href="#" class="navLinks">关于我们</a>
+					<a href="#" class="navLinks">服务理念</a>
+					<a href="#" class="navLinks">服务客户</a>
+					<a href="#" class="navLinks">拍摄花絮</a>
+					<a href="#" class="navLinks">最新动态</a>
+					<a href="#" class="navLinks">联系我们</a>
+				</div>
+			</div>
+			<div class="element_block eb_gray">
+				<div class="app_headline">
+					<span class="app_headline_icon icon_news"></span>
+					<h2 class="app_headline_text">新闻动态</h2>
+				</div>
+				<div class="headline_block headline_block_nobg">
+					<h3>不断创新是我们的风格,创造需求链</h3>
+					<h3>全球超1000家客户选择我们的理由</h3>
+					<p>上海光影社文化传播有限公司是专注于高品质CF影视广告、MV、电视广告片、企业宣传片（</p>
+					<p>中英文版本）的策划和拍摄纪录片、图片广告的拍摄和剪辑制作的多媒体视讯传播机构。多年</p>
+					<p>来活跃在与创意产业相关的影视广告、宣传品制作</p>
+				</div>
+			</div>
+		</div>
+		<div class="app_content">
+			<div class="news_unit midwidth element_block_noborder">
+				<div class="nu_nav_lite">
+					<div class="nu_nav_liteList">
+						<a class="cur" href="#">行业新闻</a><a href="#">公司动态</a><a href="#">全部新闻</a>
+					</div>
+					<div class="nu_nav_bread_crumbs">
+						<a href="index.html" class="bnc">首页 &gt; </a>
+						<span class="bnc">新闻中心</span>
+					</div>
+				</div>
+				<div class="nu_news_list_wrap">
+					<ul class="nu_news_list_ul clearfix">
+						<li class="nu_news_list_li">
+							<div class="nnl_imgblock">
+								<span class="ni_type"></span>
+								<span class="ni_imgw"><img src="images/nl_sample_pic.jpg" alt=""></span>
+								<span class="ni_date"><i>23</i><em>Apr</em></span>
+							</div>
+							<div class="nnl_textblock">
+								<h2>释放青春，激爽一夏</h2>
+								<p>
+									随着互联网的发展和时下受众的审美，标志设计演化到今天是
+									非常了不起的不能期望一切都可以在一个标志上体现出来在这
+									个快节奏的世界里，人们已经不需.
+								</p>
+							</div>
+							<div class="nnl_newsctr">
+								<a href="#" class="nnlctr_vm">view more</a>
+								<span class="nnlctr_el nce_1">topshoot</span>
+								<span class="nnlctr_el nce_2">2014-04-22</span>
+								<span class="nnlctr_el nce_3">2015</span>
+							</div>
+						</li>
+						<script>
+							//Demo js, 后台重构的时候自己记得删掉!!!
+							window.onload = function() {
+								require(['jquery-1.11.1.min'], 
+									function (jquery){
+										var $cloneTarget = $(".nu_news_list_li");
+										var $appendTarget = $(".nu_news_list_ul");
+										var cloneNum = 9;
+										for (var i=0; i < cloneNum; i++ ) {
+											$appendTarget.append($cloneTarget.clone());
+										}
+									}
+								);
+							};
+						</script>
+					</ul>
+				</div>
+				<div class="case_pagination cp_number">
+					<a class="cpc cpc_prv"></a>
+					<a class="cpc cur">01</a>
+					<a class="cpc">02</a>
+					<a class="cpc">03</a>
+					<a class="cpc">04</a>
+					<a class="cpc">05</a>
+					<a class="cpc">06</a>
+					<a class="cpc">07</a>
+					<a class="cpc cpc_nex"></a>
+				</div>
+				<div class="case_pagination cp_eng">
+					<a class="cpc_en cpc_en_f"><span>First page</span></a>
+					<a class="cpc_en cpc_en_p"><span>Previous</span></a>
+					<a class="cpc_en cpc_en_n"><span>Next</span></a>
+					<a class="cpc_en cpc_en_l"><span>Last page</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="app_footer" id="app_footer">
+		<div class="app_footer_navlite">
+			<a href="#" class="afnl_link">首页</a>
+			<a href="#" class="afnl_link">关于我们</a>
+			<a href="#" class="afnl_link">成功案例</a>
+			<a href="#" class="afnl_link">服务理念</a>
+			<a href="#" class="afnl_link">品牌客户</a>
+			<a href="#" class="afnl_link">光影团队</a>
+			<a href="#" class="afnl_link">拍摄花絮</a>
+			<a href="#" class="afnl_link">最新动态</a>
+			<a href="#" class="afnl_link">联系我们</a>
+		</div>
+		<div class="app_footer_cprw">
+			<span class="midfix"></span>
+			<div class="midblock clearfix">
+				<div class="foot_copyright">
+					<img class="rccode" src="images/RC-code.gif" alt="">
+					<span class="rccode_text userSelectable">
+						Copyright © 2014 TOPSHOOT.CN CO.,Ltd.<br>
+						版权所有 © 2014 上海光影社文化传播有限公司<br>
+						沪ICP备07000235号-1
+					</span>
+				</div>
+				<div class="foot_adress userSelectable">
+					上海市普陀区岚皋路597号品尊国际 18英尺行政大楼1006-1008室<br>
+					Adress: 1006-1008, No. 597 LanGao Road, Central Tower(18 ft administrative mansion),<br>
+					Putuo District, Shanghai, China
+				</div>
+				<div class="foot_social">
+					<a href="#" class="fsoc"><img src="images/social_qq.png" alt=""></a>
+					<a href="#" class="fsoc"><img src="images/social_wx.png" alt=""></a>
+					<a href="#" class="fsoc"><img src="images/social_sina.png" alt=""></a>
+					<a href="#" class="fsoc"><img src="images/social_a.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<!-- Javascript with AMD
+================================================== -->
+<script src="js/require.js" data-main="js/main" ></script>
+</html>
