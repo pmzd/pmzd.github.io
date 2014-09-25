@@ -319,6 +319,8 @@ scrollbar Styles
 	border-bottom: 1px solid #000;
 	background: #191919;
 	height: 60px;
+	position: relative;
+	z-index: 99;
 }
 .app_head_nav .navLinks {
 	color: #fff;
