@@ -33,6 +33,35 @@ function winCssHeight() {
 	});
 }
 
+//开发中！！！ 初始化菜单
+//获取URL参数
+function getUrlPara(paraName) {
+    var sUrl = window.location.href;
+    var sReg = "(?://?|&){1}" + paraName + "=([^&]*)";
+    var re = new RegExp(sReg, "gi");
+    re.exec(sUrl);
+    return RegExp.$1;
+}
+
+
+var GetQueryString = function(name)
+{
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if(r!==null)return  unescape(r[2]); return null;
+};
+	var getstr1 = GetQueryString('cur'); //获取1级菜单的状态识标
+
+
+function initNavgation() {
+	var $nav = $(".app_head_nav");
+	$nav.html("").load("DEV_nav.html #initnav",function() {
+		if (getstr1) {
+			$nav.find(".navLinks").eq(getstr1).addClass("cur").siblings().removeClass("cur");
+		}
+	});
+}
+	
 
 
 //构造首页Sideshow, TO: SIDESHOW_INDEX
@@ -92,7 +121,22 @@ function carousel2_index(obj) {
 	objElement.length?initCarousel2Show():'';	
 }
 
-
+//构造拍摄花絮 Carousel1, TO:CAROUSEL2_ssss
+function carouselsss_index(obj) {
+	var objElement = obj;
+	function initCarouselsssShow() {
+		var cshow = new Swiper(objElement[0],{
+			slidesPerView: 4,
+			scrollbar: {
+				container : '.swiper-scrollbar',
+				draggable : true,
+				hide: false,
+				snapOnRelease: true
+			}
+		});
+	}
+	objElement.length?initCarouselsssShow():'';	
+}
 
 
 //构造首页 关于我们的Carousel, TO:CAROUSEL3_INDEX
@@ -151,6 +195,8 @@ var jayfunction = function() {
 	$doc = $(document);
 	$html = $("html");
 	$body = $("body");
+	//
+	initNavgation();
 	//CUSTOM_CSS
 	winCssHeight();
 	//SIDESHOW_INDEX
@@ -163,4 +209,6 @@ var jayfunction = function() {
 	carousel3_index($("#carousel_aboutus_wrap"));
 	//CAROUSEL1_SERVICE
 	carousel_service($("#scnh_carousel"));
+	//sssssss
+	carouselsss_index($("#sssssss"));
 };
