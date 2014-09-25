@@ -185,6 +185,11 @@ scrollbar Styles
 .eb_gray {
 	background-color:#f5f5f5;
 }
+
+.eb_graybox {
+	background:#fff url(../images/about_graybox.gif);
+}
+
 .app_footer {
 	border-top: solid 3px #eb1b22;
 	background-color: #1f1f1f;
@@ -2253,4 +2258,48 @@ h2.cdr_h2 {
 }
 .sc_lite_link:hover .sclp {
 	color: #ab000a;
+}
+
+.aboutusTop {text-align: center;height: 462px;}
+.aboutusTop .abt_img {vertical-align: top;}
+.absTable {}
+.absTable .abs_half_width {width: 50%; vertical-align: top;padding-left: 98px;}
+.absTable .absEachTitle {height: 58px;background:left bottom no-repeat; color: #fff;line-height: 58px;padding-left: 33px;text-transform: uppercase;font-weight: normal;}
+.absTable .aet-1 {background-image:url(../images/abs_t-1.png);}
+.absTable .aet-2 {background-image:url(../images/abs_t-2.png);}
+.absTable .aet-3 {background-image:url(../images/abs_t-3.png);}
+.abs_tb {text-align: center;vertical-align: middle; height: 128px;}
+.abs_tb img {vertical-align: top;}
+.abs_textblock {font-size: 12px;color: #707070;}
+.abs_textblock strong {color: #000; font-weight: bold;line-height: 24px;}
+.abs_textblock .has_dashed {border-bottom: dashed 1px #939393; display:block; line-height: 24px; color: #000;}
+.usdev_mutiBG {
+	background:url(../images/sus_mutiL.jpg) left bottom no-repeat, url(../images/sus_mutiR.jpg) right bottom no-repeat;
+	background-color:#f9f9f9;
+}
+.show_us_dev_pro {
+}
+.dev_pro_top {
+	height: 233px;
+	padding-left: 538px;
+	background:url(../images/dev_pro_top_bg_1.png) 98px center no-repeat;
+}
+.dev_pro_bot {
+	margin: 0 98px;
+	padding-bottom: 40px;
+}
+
+.devpro_tb {
+	display: table;
+	width: 100%;
+	border-collapse:collapse;
+}
+.devpro_trow {
+	display: table-row;
+}
+.devpro_rcell:first-child {
+	width: 246px;
+}
+.devpro_rcell {
+	display: table-cell;
 }
