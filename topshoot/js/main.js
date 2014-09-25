@@ -1,13 +1,13 @@
 //配置页面加载模块参数
 require.config({
 	paths: {
-		"modernizr":"modernizr.custom",
-		"jquery": "jquery-1.11.1.min",
-		"scalcHeight": "jay.plugins.scalcHeight",
-		"swiper":"swiper/idangerous.swiper.min",
-		"swiperscrollbar":"swiper/idangerous.swiper.scrollbar.min",
-		"jay": "jay"
-		//,"cycle":"cycle/jquery.cycle2.min"
+		"modernizr"			:"modernizr.custom",
+		"jquery"			:"jquery-1.11.1.min",
+		"scalcHeight"		:"jay.plugins.scalcHeight",
+		"Tabs"				:"jay.plugins.tabs",
+		"swiper"			:"swiper/idangerous.swiper.min",
+		"swiperscrollbar"	:"swiper/idangerous.swiper.scrollbar.min",	
+		"jay"				:"jay"
 	},
 	shim: {//模块依赖关系
 		'swiperscrollbar': {deps:['swiper']},
@@ -26,10 +26,11 @@ require(
 		'jquery-1.11.1.min',
 		'jay.plugins.scalcHeight',
 		'swiper',
+		'Tabs',
 		'swiperscrollbar',
 		'jay'		
 	], 
-	function (jquery,scalcHeight,swiper,swiperscrollbar,jay){
+	function (jquery,scalcHeight,swiper,swiperscrollbar,Tabs,jay){
 		$(function() {
 			jayfunction();
 		});

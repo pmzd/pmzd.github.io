@@ -70,6 +70,12 @@ function sideshow(obj) {
 	function initSideShow() {
 		var indexBannerSwiper= new Swiper(objElement[0],{
 			pagination: '.app_head_banner .pagination',
+			autoplay:3000,
+			mode:'horizontal',
+			autoplayDisableOnInteraction: (function() {
+				//可触摸设备下面，第一次触摸之后屏蔽掉AUTOPLAY
+				return Modernizr.touch;
+			})(),
 			loop:true,
 			grabCursor: false,
 			paginationClickable: true
@@ -144,6 +150,11 @@ function carousel3_index(obj) {
 	var objElement = obj;
 	function initCarousel3Show() {
 		var cshow = new Swiper(objElement[0],{
+			autoplay:3000,
+			autoplayDisableOnInteraction: (function() {
+				//可触摸设备下面，第一次触摸之后屏蔽掉AUTOPLAY
+				return Modernizr.touch;
+			})(),
 			pagination: ".caic_page",
 			paginationClickable: true,
 			slidesPerView: 4,
@@ -188,6 +199,44 @@ function show_value(obj) {
 	var _text = obj.options[obj.selectedIndex].text;
 	obj.parentNode.querySelectorAll("EM")[0].innerHTML = _text;
 }
+//构造视频详情顶部 VideoBox 方法
+function videoboxs(obj) {
+	var $obj = $(obj);
+	if ($obj.length){
+		var sidebar = ".vwsidebar";
+		var playlist = ".vwrightbox";
+		var $sidebar = $obj.find(sidebar);
+		var $playlist = $obj.find(playlist);
+		
+		function closeList() {
+			$sidebar.addClass("changeCur");
+			$playlist.css("display","none");
+		}
+		function openList() {
+			$sidebar.removeClass("changeCur");
+			$playlist.removeAttr("style");
+		}
+		
+		$obj.on("click.vboxsidebar",sidebar,function(e) {
+			$playlist.css("display")!="none"?closeList():openList();
+		});
+		//initScroll
+		var listEL = "#vmbox_rPlayListCont";
+		var $listEL = $(listEL);
+		var listSwiper = new Swiper(listEL,{
+			mode:'vertical',
+			cssWidthAndHeight:true,
+			scrollbar: {
+				container : '.swiper-scrollbar',
+				draggable : true,
+				hide: false,
+				snapOnRelease: true
+			}
+		})
+		
+	}
+}
+
 
 var jayfunction = function() {
 	//定义变量
@@ -211,4 +260,6 @@ var jayfunction = function() {
 	carousel_service($("#scnh_carousel"));
 	//sssssss
 	carouselsss_index($("#sssssss"));
+	//VideoBox
+	videoboxs("#vedioWrap");
 };
