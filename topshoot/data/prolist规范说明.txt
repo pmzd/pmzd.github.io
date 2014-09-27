@@ -1,0 +1,14 @@
+﻿[
+    {
+        "proname": "用户名",
+        "propro": "职位",
+        "proimgURL": "小头像URL",
+        "proimgURL2": "大头像URL或者null",
+        "promail": "邮箱地址或者 null",
+        "prodetaillite": "短的简介，可以包含html元素，例如换行是 <br>",
+        "prodetail": "长的简介，可以包含html元素，例如换行是 <br>"
+    }
+]
+
+
+ps: 当值是空的时候写 null, 不需要加双引号

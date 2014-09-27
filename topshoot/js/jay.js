@@ -177,7 +177,7 @@ function carousel_service(obj) {
 			onSlideClick:function() {
 				var $targetEl = $(cshow.clickedSlide);
 				$targetEl.addClass("cur").siblings().removeClass("cur");
-				$(".su_year_big").html($targetEl.find("a").html())
+				$(".su_year_big").html($targetEl.find("a").html());
 				event.preventDefault();
 			}
 		});
@@ -199,6 +199,8 @@ function show_value(obj) {
 	var _text = obj.options[obj.selectedIndex].text;
 	obj.parentNode.querySelectorAll("EM")[0].innerHTML = _text;
 }
+
+
 //构造视频详情顶部 VideoBox 方法
 function videoboxs(obj) {
 	var $obj = $(obj);
@@ -225,18 +227,117 @@ function videoboxs(obj) {
 		var $listEL = $(listEL);
 		var listSwiper = new Swiper(listEL,{
 			mode:'vertical',
-			cssWidthAndHeight:true,
+			scrollContainer:true,
+    		mousewheelControl : true,
 			scrollbar: {
 				container : '.swiper-scrollbar',
 				draggable : true,
 				hide: false,
 				snapOnRelease: true
 			}
-		})
+		});
 		
 	}
 }
-
+//TEAM
+var teamaction = function($target, jsonURL) {
+	var $tar = $target;
+	var cachetempla = $("<ul>").attr("id","cacheID");
+	var litempla= 
+			'<li class="team_list_li">'+
+			'	<span class="cait_thumb" style="background-image:url()">'+
+			'	</span>'+
+			'	<h2 class="cit"><font color="red" class="userSelectable">名字</font><i>职位</i></h2>'+
+			'	<div class="cait_textbox">'+
+			'		<p>内容</p>'+
+			'	</div>'+
+			'</li>';
+	var showtempla = 
+			'<li class="team_men_detail userSelectable hide clearfix">'+
+			'	<div class="team_men_detail_box">'+
+			'		<div class="teamMenDetail_head"></div>'+
+			'		<div class="team_men_detail_intro">'+
+			'			<h2 class="tdh"><i>名字</i><em>职位</em></h2>'+
+			'			<p>内容</p>'+
+			'		</div>'+
+			'	</div>'+
+			'	<div class="team_men_detail_ctr"></div>'+
+			'</li>';
+	if ($tar.length) {
+		$.getJSON(jsonURL).always(function(data) {
+			var dataLength = data.length;
+			for (var i=0; i< dataLength; i++ ){
+				var newlitempla = litempla;
+				var newtp = $("<div>").attr("id","tpsd");
+				newtp.append(newlitempla);
+				newtp.find("span.cait_thumb").css("background-image", "url("+ data[i].proimgURL +")");
+				newtp.find(".cit font").html(data[i].proname);
+				newtp.find(".cit i").html(data[i].propro);
+				newtp.find(".cait_textbox p").html($.parseHTML(data[i].prodetaillite));
+				data[i].promail!==null?newtp.find(".cait_textbox").append('<a href="mailTo:'+ data[i].promail +'" class="cait_mail">'+data[i].promail+'</a>'):'';
+				
+				eachLast = newtp.find(".team_list_li");
+				eachLast.data({
+					"name"     : data[i].proname,
+					"pro"      : data[i].propro,
+					"bigURL"   : (function() {if ( data[i].proimgURL2 === null) {return data[i].proimgURL;} else {return data[i].proimgURL2;}})(),
+					"datatext" : data[i].prodetail
+				});
+				//.on("click", function(e) {	
+					//debug
+					//console.log($(this).data())
+				//})
+				cachetempla.append(eachLast);
+				
+			}
+			
+			var $thisinner,
+				lidata,
+				$allreciveEl,
+				$sendToElAll,
+				$sendToEl;
+			
+			$tar.html("").append(cachetempla.find(".team_list_li")).on("click.teamact", ".team_list_li", function(e){
+				$thisinner = $(this);
+				lidata = $thisinner.data();
+				$allreciveEl = $tar.find(".team_men_detail");
+				$sendToElAll = $thisinner.nextAll(".team_men_detail");
+				$sendToEl = $sendToElAll.eq(0);
+								
+				if ( $thisinner.hasClass("cur") ) {
+					//$allreciveEl.addClass("hide");
+					$allreciveEl.slideUp(120);
+					$thisinner.removeClass("cur");
+				} else {
+					$thisinner.addClass("cur").siblings().removeClass("cur");
+					//$sendToEl.removeClass("hide");
+					//$allreciveEl.not( $sendToEl[0] ).addClass("hide");
+					
+					$sendToEl.slideDown(150);
+					$allreciveEl.not( $sendToEl[0] ).slideUp(120);
+					
+				}
+				$sendToEl
+						.find(".tdh i").html( lidata.name ).end()
+						.find(".tdh em").html(lidata.pro).end()
+						.find(".teamMenDetail_head").css("background-image", "url("+ lidata.bigURL +")").end()
+						.find(".team_men_detail_intro p").html( $.parseHTML(lidata.datatext) );
+			}).on("click", ".team_men_detail_ctr", function() {
+				$sendToEl.slideUp(120);
+				$thisinner.removeClass("cur");
+			});
+			var items = $tar.find(".team_list_li");
+			var firstItem = items.eq(0);
+			var eachWidth = firstItem.width() + parseInt(firstItem.css("margin-right")) + parseInt(firstItem.css("margin-left"));
+			var eachLengh = Math.floor($tar.width()/eachWidth);
+			var RowLengh = Math.ceil(dataLength/eachLengh);
+			
+			items.filter(":nth-of-type("+ eachLengh +"n)").after(showtempla);
+			//console.log(eachWidth,eachLengh,RowLengh);
+		});
+	}
+	
+};
 
 var jayfunction = function() {
 	//定义变量
@@ -262,4 +363,6 @@ var jayfunction = function() {
 	carouselsss_index($("#sssssss"));
 	//VideoBox
 	videoboxs("#vedioWrap");
+	//teamwork eg: teamaction(jQelement, jsonURL)
+	teamaction($(".team_list_ul"), "data/prolist.txt");
 };

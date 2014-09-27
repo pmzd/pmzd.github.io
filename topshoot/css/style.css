@@ -671,9 +671,11 @@ scrollbar Styles
 }
 .cait_thumb {
 	display: block;
-	margin: 0 12px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	margin: 10px 12px;
+	height: 242px;
+	background: center center no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
 }
 .cait h2.cit font{
 	font-size: 14px;
@@ -2082,6 +2084,9 @@ h2.cdr_h2 {
 	border-top: solid 8px #e91622;
 	background:#f5f5f5;
 }
+.team_list_wrap .team_men_detail.hide {
+	display: none;
+}
 .team_men_detail_box {
 	padding: 30px 42px 0;
 }
@@ -2115,10 +2120,14 @@ h2.cdr_h2 {
 }
 .teamMenDetail_head {
 	width: 234px;
+	height: 250px;
 	max-height: 500px;
 	vertical-align: top;
 	float: left;
 	margin-right: 36px;
+	background: center center no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
 }
 .team_men_detail_intro {
 	margin: 0 36px;
