@@ -1486,12 +1486,23 @@ h2.cdr_h2 {
 	margin-left: -8px;
 	background: url(../images/cv_title_bg.png) left center no-repeat;
 }
+
+.cv_box dt .fpv {
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	font-size: 12px;
+	color: #7b7b7b;
+	padding: 0 5px;
+	border: solid 1px #d0d0d0;
+}
 .cv_box dd {
 	padding: 0 0 15px 15px;
 }
 .cv_i_inner {
-	padding: 10px;
-	background-color: #f8f8f8;
+	padding: 0;
+	/*background-color: #f8f8f8;*/
 }
 .cv_img_wrap img {
 	vertical-align: top;
@@ -1499,26 +1510,43 @@ h2.cdr_h2 {
 	height: 100%;
 }
 .cv_img_wrap {
-	width: 300px;
-	height: 210px;
+	width: 197px;
+	height: 277px;
 	float: left;
-	margin-right: 30px;
+	margin-right: 24px;
 }
 .cv_i_inner .cv_h2 {
-	line-height: 48px;
+	line-height: 24px;
 	font-weight: normal;
 	font-size: 18px;
-	color: #333333;
+	color: #326a3d;
+}
+.cv_h2 .fpv_nx2 {
+	float: right;
+	margin-left: 4px;
+	color:#26562e;
+	font-size: 12px;	
+}
+.cv_h2 .fpv_nx {
+	float: right;
+	color:#934b4e;
+	font-size: 14px;
+}
+
+.cv2 {
+	color: #7f7d7e;
+	font-size: 12px;
+	margin-left: 10px;
 }
 .cv_i_inner .cv_h3 {}
 .cv_i_inner .cv_h3 {
 	font-weight: normal;
 	font-size: 12px;
-	line-height: 24px;
+	line-height: 20px;
 }
 .cv_i_inner .cv_p {
-	font-size: 14px;
-	line-height: 18px;
+	font-size: 12px;
+	line-height: 20px;
 	color: #666666;
 }
 .cv_i_inner .cv_p a:hover {
@@ -3119,4 +3147,63 @@ h2.cdr_h2 {
 
 .qbrao {
 	text-align: right;
+}
+
+.attention:hover {
+	background-color: #fff;
+}
+.attention {
+	cursor: pointer;
+	width: 134px;
+	height: 22px;
+	line-height: 22px;
+	font-size: 14px;
+	color: #404040;
+	display: inline-block;
+	border: solid 1px #c1c1c1;
+	background-color: #f9f9f9;
+	text-align: center;
+}
+.attention img {
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-top: -3px;
+	margin-right: 10px;
+}
+.pvmoreshow {
+	overflow: hidden;
+	margin-left: 100px;
+}
+.pvms:first-child {
+	margin-left: 0;
+}
+.pvms {
+	position: relative;
+	float: left;
+	margin-left: 60px;
+}
+.pvms img {
+	vertical-align: top;
+	width: 188px;
+	height: 106px;
+}
+.cvbox_text_top {
+	height: 171px;
+}
+.pvms .screenshot_pv {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	text-indent: 4px;
+	color: #fff;
+	white-space: nowrap;
+	word-break: keep-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background-color: rgba(0, 0, 0, 0.63);
 }
