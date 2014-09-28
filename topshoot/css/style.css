@@ -287,32 +287,34 @@ scrollbar Styles
 }
 .app_head_top .hotline {
 	float: right;
-	width: 248px;
+	width: 100px;
 	padding-left: 32px;
 	height: 100%;
-	background: url(../images/hotline_line.gif) left center no-repeat;
+	/* background: url(../images/hotline_line.gif) left center no-repeat; */
 }
 .hotline .hlp1 {
 	padding-top: 20px;
 	font-size: 12px;
 	line-height: 22px;
+	display: none;
 	color: #666666;
 }
 .hotline .hlp2 {
-	font-size: 30px;
-	line-height: 30px;
+	font-size: 14px;
+	line-height: 48px;
 	font-family: "Arial";
 	font-weight: bold;
 	color: #000;
 }
 .app_head_top .online_consulting {
 	float: right;
-	height: 37px;
-	line-height: 37px;
+	height: 48px;
+	width: 48px;
+	line-height: 48px;
 	font-size: 18px;
-	padding-left: 46px;
-	padding-top: 32px;
-	padding-right: 30px;
+	padding-left: 0;
+	padding-top: 0;
+	padding-right: 0;
 	background: url(../images/ts_oc.png) left 23px no-repeat;
 }
 .app_head_nav {
@@ -444,15 +446,17 @@ scrollbar Styles
 }
 .app_headline_text {
 	font-size: 30px;
-	line-height: 52px;
+	line-height: 67px;
 	font-weight: bolder;
+	display: inline-block;
 	color: #e91622;
 }
 .app_headline_icon {
 	display: inline-block;
 	vertical-align: top;
-	width: 118px;
-	height: 134px;
+	width: 59px;
+	height: 67px;
+	-webkit-background-size: 100% 100%;
 	background:  center center no-repeat;
 }
 .app_headline .icon_case {background-image: url(../images/headline-case.png);}
@@ -488,7 +492,7 @@ scrollbar Styles
 	color: #666666;
 }
 .headline_block .show_more_wrap { 
-	padding-top: 24px;
+	padding-top: 8px;
 }
 .headline_block .show_more {
 	display: inline-block;
@@ -630,10 +634,10 @@ scrollbar Styles
 	letter-spacing: normal;
 	display: inline-block;
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 12px;
 	color: #fff;
-	margin: 0 13px;
-	min-width: 78px;
+	margin: 0 2px;
+	min-width: 50px;
 	padding: 0 10px;
 	background: #49494e;
 	border: solid 1px #313134;
@@ -3215,4 +3219,118 @@ h2.cdr_h2 {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	background-color: rgba(0, 0, 0, 0.63);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 480px) {
+/* Styles */
+	html {min-width: 320px;}
+	.swiper_prevbtn,
+	.swiper_nextbtn,
+	.app_head_top .hotline,
+	.pageFlortEl{display: none;}
+	.app_head_top .midwidth {height: 48px;}
+	.app_head_top .ts_logo {
+		width: 150px;
+		-webkit-background-size: 100% auto;
+		background-size: 100% auto;
+		background-position: 50% 3px;
+	}
+	.midwidth {width: 100%; margin: 0 auto;}
+	.app_head_top .online_consulting {
+		float: right;
+		height: 48px;
+		width: 48px;
+		line-height: 48px;
+		font-size: 0px;
+		padding-left: 0;
+		padding-top: 0;
+		padding-right: 0;
+		background: url(../images/480/memubg.png) center center no-repeat;
+	}
+	.app_head_nav {
+		display: none;
+	}
+	.app_head_banner .swiper-container .swiper-slide img {
+		width: auto;
+		height: 100%;
+	}
+	.app_head_banner .swiper-container,
+	.app_head_banner {
+		height: 160px;
+	}
+	.app_head_banner .pagination {
+		bottom: 2px;
+	}
+	.app_head_banner .pagination .swiper-pagination-switch {
+		background: url(../images/pagination-switch.png) left top no-repeat;
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		cursor: pointer;
+		margin: 0 2px;
+		-webkit-background-size: 8px auto;
+		background-size: 8px auto;
+	}
+	.app_head_banner .pagination .swiper-active-switch {
+		background-position: left -8px;
+	}
+	
+	.app_headline_icon {
+		display: inline-block;
+		vertical-align: top;
+		width: 59px;
+		height: 67px;
+		background: center center no-repeat;
+		-webkit-background-size: 100% 100%;
+		background-size: 100% 100%;
+	}
+	.app_headline_text {
+		font-size: 30px;
+		line-height: 67px;
+		font-weight: bolder;
+		display: inline-block;
+		color: #e91622;
+	}
+	.app_headline {
+		padding-bottom: 10px;	
+	}
+
+	.cc2_nav_wrap .cc2nitem {
+		letter-spacing: normal;
+		display: inline-block;
+		text-decoration: none;
+		font-size: 12px;
+		color: #fff;
+		margin: 0 2px 4px;
+		min-width: 50px;
+		width: calc(23% - 4px);
+		width: -webkit-calc(23% - 4px);
+		padding: 0 10px;
+		background: #49494e;
+		border: solid 1px #313134;
+		line-height: 32px;
+		text-align: center;
+	}
+	.cc2_nav_wrap .cc2nitem:nth-of-type(3)~ .cc2nitem {
+		margin-bottom: 0;
+	}
+
 }
