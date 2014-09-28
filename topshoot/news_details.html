@@ -119,7 +119,7 @@
 					</div>
 				</div>
 				<ul class="nu_innerList_wrap">
-					<li class="nu_innerList"><a href="#">列表循环区域</a></li>
+					<li class="nu_innerList">列表循环区域</li>
 				</ul>
 				<div class="nu_innerList_share">
 					<div class="bdsharebuttonbox" style="float: right;">
@@ -164,7 +164,7 @@
 								var cloneNum = newsList.length;
 								//因为是例子，不做循环优化，实际开发请先把所有For动作缓存到内存，再一起append到DOM
 								for (var i=0; i < cloneNum; i++ ) {
-									$appendTarget.append($cloneTarget.clone().html( "<a href=\"#\">" + newsList[i] + "<\/a>" ));
+									$appendTarget.append($cloneTarget.clone().html( newsList[i] ));
 								}
 							}
 						);
