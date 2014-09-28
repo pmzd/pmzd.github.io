@@ -2045,19 +2045,19 @@ h2.cdr_h2 {
 	min-height: 37px;
 	background:url(../images/nu_innerList_share_bg.png) left center no-repeat;
 }
-.nu_innerList_wrap .nu_innerList {
+.nu_innerList_wrap p {
 	line-height: 67px;
 	font-size: 12px;
 	border-top: dotted 1px #e5e5e5;
 }
-.nu_innerList_wrap .nu_innerList:first-child {
+.nu_innerList_wrap p:first-child {
 	border-top: none;
 }
-.nu_innerList_wrap .nu_innerList a {
+.nu_innerList_wrap p a {
 	text-decoration: none;
 	color: #393939;
 }
-.nu_innerList_wrap .nu_innerList a:hover {
+.nu_innerList_wrap p a:hover {
 	color: #ab000a;
 }
 
