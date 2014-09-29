@@ -98,12 +98,29 @@ function sideshow(obj) {
 function carousel_index(obj) {
 	var objElement = obj;
 	function initCarouselShow() {
-		var cshow = new Swiper(objElement[0],{
+		var each =objElement.find(".wcc");
+		var cshow = objElement.swiper({
 			pagination: ".wcc_pagenaction",
 			paginationClickable: true,
-			slidesPerView: 5,
-			loop: true
+			slidesPerView:"auto",
+			//slidesPerView: 5,
+			//loop: true
 		});
+		var $ww = $win || $(window);
+		if ($ww.width() <= 480 ) {
+			each.css({
+				width: objElement.width()
+			});
+		}
+		$ww.on("resize.cs01", function() {
+			if ($ww.width() <= 480 ) {
+				each.css({
+					width: objElement.width()
+				})
+			} else {
+				each.removeAttr("style");
+			}
+		})
 	}
 	objElement.length?initCarouselShow():'';	
 }
@@ -239,6 +256,12 @@ function videoboxs(obj) {
 		
 	}
 }
+
+function rflayout() {
+	var lay01 = $(".highlights_title");
+	lay01.length?lay01.closest(".element_block").addClass("highlights"):'';
+}
+
 //TEAM
 var teamaction = function($target, jsonURL) {
 	var $tar = $target;
@@ -365,4 +388,6 @@ var jayfunction = function() {
 	videoboxs("#vedioWrap");
 	//teamwork eg: teamaction(jQelement, jsonURL)
 	teamaction($(".team_list_ul"), "data/prolist.txt");
+	//响应式页面需求添加样式。
+	rflayout();
 };
