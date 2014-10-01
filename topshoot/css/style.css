@@ -287,34 +287,32 @@ scrollbar Styles
 }
 .app_head_top .hotline {
 	float: right;
-	width: 100px;
+	width: 248px;
 	padding-left: 32px;
 	height: 100%;
-	/* background: url(../images/hotline_line.gif) left center no-repeat; */
+	background: url(../images/hotline_line.gif) left center no-repeat; 
 }
 .hotline .hlp1 {
 	padding-top: 20px;
 	font-size: 12px;
 	line-height: 22px;
-	display: none;
 	color: #666666;
 }
 .hotline .hlp2 {
-	font-size: 14px;
-	line-height: 48px;
+	font-size: 30px;
+	line-height: 30px;
 	font-family: "Arial";
 	font-weight: bold;
 	color: #000;
 }
 .app_head_top .online_consulting {
 	float: right;
-	height: 48px;
-	width: 48px;
-	line-height: 48px;
+	height: 37px;
+	line-height: 37px;
 	font-size: 18px;
-	padding-left: 0;
-	padding-top: 0;
-	padding-right: 0;
+	padding-left: 46px;
+	padding-top: 32px;
+	padding-right: 30px;
 	background: url(../images/ts_oc.png) left 23px no-repeat;
 }
 .app_head_nav {
@@ -446,17 +444,15 @@ scrollbar Styles
 }
 .app_headline_text {
 	font-size: 30px;
-	line-height: 67px;
+	line-height: 52px;
 	font-weight: bolder;
-	display: inline-block;
 	color: #e91622;
 }
 .app_headline_icon {
 	display: inline-block;
 	vertical-align: top;
-	width: 59px;
-	height: 67px;
-	-webkit-background-size: 100% 100%;
+	width: 118px;
+	height: 134px;
 	background:  center center no-repeat;
 }
 .app_headline .icon_case {background-image: url(../images/headline-case.png);}
@@ -3245,6 +3241,7 @@ and (max-width : 480px) {
 	.swiper_prevbtn,
 	.swiper_nextbtn,
 	.app_head_top .hotline,
+	.hotline .hlp1,
 	.ourMaps>div.omR,
 	.pageFlortEl{display: none;}
 	.app_head_top .midwidth {height: 48px;}
@@ -3352,4 +3349,18 @@ and (max-width : 480px) {
 	.highlights {
 		display: none;
 	}
+	
+	.hotline .hlp2 {
+		font-size: 14px;
+		line-height: 48px;
+	}
+	.app_head_top .hotline {
+		float: right;
+		width: 100px;
+		padding-left: 32px;
+		height: 100%;
+		background: none; 
+	}
+	
+
 }
