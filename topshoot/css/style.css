@@ -667,6 +667,7 @@ scrollbar Styles
 .cait_item_wrap {
 	height: 100%;
 	margin: 0 5px;
+	overflow: hidden;
 	background: #f5f5f5;
 }
 .cait_thumb img {
@@ -3372,4 +3373,32 @@ and (max-width : 480px) {
 	.ic2sb {
 		height: 10px;
 	}
+	.carousel_aboutus_wrap {
+		width: 100%;
+	}
+	.cait_thumb {height: auto;}
+	.cait h2.cit {display: none;}
+	.cait .cait_textbox {display: none;}
+	.carousel_aboutus_wrap {height: 78px;}
+	.our_work_space .owlist {
+		display: block;
+		padding-bottom: 6px;
+	}
+	.our_work_space .owlist img{
+		width: 100%;
+	}
+	.outCus {
+		width: 100%
+	}
+	.comp_news_box .cpb {
+		width: auto;
+		margin: 0 10px !important;
+		display: block;
+	}
+	.foot_social,
+	.foot_adress,
+	.foot_copyright .rccode,
+	.app_footer_navlite {display: none;}
+	
+	.foot_copyright {padding-right: 0; background: none;}
 }
