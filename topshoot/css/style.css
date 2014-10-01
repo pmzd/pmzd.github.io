@@ -564,6 +564,10 @@ scrollbar Styles
 	cursor: pointer;
 	background:url(../images/pagination-carousel.png) left top no-repeat;
 }
+.wcc_pagenaction .swiper-visible-switch {
+	background-position: left center;
+}
+
 .caic_page .swiper-active-switch,
 .wcc_pagenaction .swiper-active-switch {
 	background-position: left bottom;
@@ -3361,6 +3365,11 @@ and (max-width : 480px) {
 		height: 100%;
 		background: none; 
 	}
-	
-
+	.ic2sb,
+	.case_carousel_2_wrap {
+		width: 100%;
+	}
+	.ic2sb {
+		height: 10px;
+	}
 }

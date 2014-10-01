@@ -130,9 +130,10 @@ function carousel_index(obj) {
 //构造首页 Carousel2, TO:CAROUSEL2_INDEX
 function carousel2_index(obj) {
 	var objElement = obj;
+	var each =objElement.find(".cc2");
 	function initCarousel2Show() {
 		var cshow = new Swiper(objElement[0],{
-			slidesPerView: 4,
+			slidesPerView:"auto",
 			scrollbar: {
 				container : '.swiper-scrollbar',
 				draggable : true,
@@ -140,6 +141,21 @@ function carousel2_index(obj) {
 				snapOnRelease: true
 			}
 		});
+		var $ww = $win || $(window);
+		if ($ww.width() <= 480 ) {
+			each.css({
+				width: objElement.width()
+			});
+		}
+		$ww.on("resize.cs02", function() {
+			if ($ww.width() <= 480 ) {
+				each.css({
+					width: objElement.width()
+				})
+			} else {
+				each.removeAttr("style");
+			}
+		})
 	}
 	objElement.length?initCarousel2Show():'';	
 }
