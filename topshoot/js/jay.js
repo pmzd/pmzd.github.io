@@ -204,7 +204,8 @@ function carousel_service(obj) {
 	var objElement = obj;
 	function initCarousel_ser_Show() {
 		var cshow = new Swiper(objElement[0],{
-			slidesPerView: 5,
+			mode:'horizontal',
+			slidesPerView: 3,
 			loop: false,
 			mousewheelControl:true,
 			onSlideClick:function() {
@@ -378,6 +379,24 @@ var teamaction = function($target, jsonURL) {
 	
 };
 
+//构造响应式判断菜单
+function resmenu() {
+	var $ww = $win || $(window); //cache
+	function initmenu() {
+		if ($ww.width() <= 481) {
+			$doc.on("click.pso", ".online_consulting", function() {
+				$(document.getElementsByClassName("app_head_nav")).slideToggle(120);
+			})
+		} else {
+			$doc.off("click.pso");
+		}
+	}
+	initmenu();
+	$ww.on("resize", function() {
+		initmenu();
+	});
+}
+
 var jayfunction = function() {
 	//定义变量
 	$win = $(window);
@@ -406,4 +425,5 @@ var jayfunction = function() {
 	teamaction($(".team_list_ul"), "data/prolist.txt");
 	//响应式页面需求添加样式。
 	rflayout();
+	resmenu();
 };
