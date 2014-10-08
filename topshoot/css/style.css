@@ -1517,7 +1517,7 @@ h2.cdr_h2 {
 	height: 100%;
 }
 .cv_img_wrap {
-	width: 197px;
+	width: 400px;
 	height: 277px;
 	float: left;
 	margin-right: 24px;
@@ -1922,7 +1922,8 @@ h2.cdr_h2 {
     padding-bottom: 28px;
 }
 .nnl_textblock h2 {
-    line-height: 40px;
+    line-height: normal; 
+	margin-bottom: 15px;
     font-size: 15px;
     color: #282828;
     font-weight: normal;
