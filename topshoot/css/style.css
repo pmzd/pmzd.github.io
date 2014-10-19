@@ -2048,9 +2048,30 @@ h2.cdr_h2 {
 .nu_innerList_share {
 	margin-top: 30px;
 	background: #000;
-	min-height: 37px;
+	min-height: 47px;
 	background:url(../images/nu_innerList_share_bg.png) left center no-repeat;
 }
+.nu_innerList_share .sharebox {
+	float: right;
+}
+.sharebox .shareLinks {
+	float: left;
+	width: 41px;
+	height: 41px;
+	background: left top no-repeat;
+	cursor: pointer;
+	margin-left: 10px;
+	-webkit-background-size: 100% auto;
+	background-size: 100% auto;
+}
+.sharebox  .sl-qqwb{background-image:url(../images/sl-qqwb.png);}
+.sharebox  .sl-wx{background-image:url(../images/sl-wx.png);}
+.sharebox  .sl-wb{background-image:url(../images/sl-wb.png);}
+.sharebox  .sl-rr{background-image:url(../images/sl-rr.png);}
+.sharebox  .sl-kx{background-image:url(../images/sl-kx.png);}
+.sharebox  .sl-ty{background-image:url(../images/sl-ty.png);}
+.sharebox  .sl-hb{background-image:url(../images/sl-hb.png);}
+
 .nu_innerList_wrap p {
 	line-height: 67px;
 	font-size: 12px;
@@ -3623,4 +3644,36 @@ and (max-width : 480px) {
 	}
 	.showbigCarouselWrap {height: 70px;}
 	
+	.jjcc {
+		padding: 0 10px;
+	}
+	.jjcc .jc_1, 
+	.jjcc .jc_2, 
+	.jjcc .jc_3, 
+	.jjcc .jc_4 {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		border: solid 1px red;
+		width: 100%;
+		height: 180px;
+		margin-bottom: 10px;
+		border-radius:200px;
+		background-position:center center ;
+		-webkit-background-size: contain;
+		background-size: contain;
+	}
+	
+	.jjcc .jc_1{background-image:url(../images/jc-1.gif)}
+	.jjcc .jc_2{background-image:url(../images/jc-2.gif)}
+	.jjcc .jc_3{background-image:url(../images/jc-3.gif)}
+	.jjcc .jc_4{background-image:url(../images/jc-4.gif)}
+	
+	
+	.jjcc .jc_1:hover, 
+	.jjcc .jc_2:hover, 
+	.jjcc .jc_3:hover, 
+	.jjcc .jc_4:hover {
+		background-position: center center;
+	}
 }
