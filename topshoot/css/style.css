@@ -1590,13 +1590,13 @@ h2.cdr_h2 {
 }
 .si_sorTable .si03 {
 	border-right: dotted 1px #d6d6d6;
-	padding: 80px 80px 0 0;
-	vertical-align: bottom;
+	padding: 20px 80px 0 0;
+	vertical-align: top;
 }
 .si_sorTable .si04 {
 	border-left: dotted 1px #d6d6d6;
-	vertical-align: bottom;
-	padding: 80px 0 0 80px;
+	vertical-align: top;
+	padding: 20px 0 0 80px;
 }
 
 .siEachBlock {
@@ -3038,6 +3038,9 @@ h2.cdr_h2 {
 }
 .changeCur {
 	background-image: url(../images/vmbox_arrow3.gif);
+}
+.vwLeftbox iframe {
+	vertical-align: top;
 }
 .vmbox_rTitle {
 	height: 36px;
