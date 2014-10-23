@@ -122,7 +122,18 @@
 					<p>列表循环区域</p>
 				</div>
 				<div class="nu_innerList_share midwidth">
-					<div class="sharebox">
+					<div class="bdsharebuttonbox sharebox" style="float: right;">
+					
+						<a class="bds_more" href="#" data-cmd="more"></a>
+						<a title="分享到腾讯微博" class="shareLinks sl-qqwb bds_tqq" href="#" data-cmd="tqq"></a>
+						<a title="分享到微信" class="shareLinks sl-wx bds_weixin" href="#" data-cmd="weixin"></a>
+						<a title="分享到新浪微博" class="shareLinks sl-wb bds_tsina" href="#" data-cmd="tsina"></a>
+						<a title="分享到人人网" class="shareLinks sl-rr bds_renren" href="#" data-cmd="renren"></a>
+						<a title="分享到开心网" class="shareLinks sl-kx bds_kaixin001" href="#" data-cmd="kaixin001"></a>
+						<a title="分享到天涯社区" class="shareLinks sl-ty bds_ty" href="#" data-cmd="ty"></a>
+						<a title="分享到花瓣" class="shareLinks sl-hb bds_huaban" href="#" data-cmd="huaban"></a>
+					</div>
+					<!-- <div class="sharebox">
 						<a href="#" class="shareLinks sl-qqwb"></a>
 						<a href="#" class="shareLinks sl-wx"></a>
 						<a href="#" class="shareLinks sl-wb"></a>
@@ -130,9 +141,23 @@
 						<a href="#" class="shareLinks sl-kx"></a>
 						<a href="#" class="shareLinks sl-ty"></a>
 						<a href="#" class="shareLinks sl-hb"></a>
-					</div>
+					</div> -->
 					<script>
-					
+					//Demo js, 这里引用了百度分享作为例子，请你们自己选择合适自己的。
+					window._bd_share_config={
+						"common":{
+							"bdSnsKey":{},
+							"bdText":"",
+							"bdMini":"1",
+							"bdMiniList":false,
+							"bdPic":"",
+							"bdStyle":"0",
+						"bdSize":"24"
+						},
+						"share":{}
+					};
+					with(document)0[(getElementsByTagName('head')[0]||body).appendChild(
+					createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 					//Demo js, 后台重构的时候自己记得删掉!!!
 					window.onload = function() {
 						require(['jquery-1.11.1.min'], 

@@ -2066,15 +2066,21 @@ h2.cdr_h2 {
 	float: right;
 }
 .sharebox .shareLinks {
+	background-position:left top !important;
+	line-height: normal !important;
+	padding: 0 !important;
+	font-size: medium !important;
 	float: left;
 	width: 41px;
 	height: 41px;
 	background: left top no-repeat;
 	cursor: pointer;
-	margin-left: 10px;
-	-webkit-background-size: 100% auto;
-	background-size: 100% auto;
+	margin: 0 !important;
+	margin-left: 10px !important;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
 }
+.bds_more {display: none !important;}
 .sharebox  .sl-qqwb{background-image:url(../images/sl-qqwb.png);}
 .sharebox  .sl-wx{background-image:url(../images/sl-wx.png);}
 .sharebox  .sl-wb{background-image:url(../images/sl-wb.png);}
