@@ -396,6 +396,9 @@ scrollbar Styles
 	position: relative;
 	background-color: #000;
 }
+.app_head_banner > img {
+	vertical-align: top;
+}
 .app_head_banner .swiper-container{
 	height: 510px;
 }
