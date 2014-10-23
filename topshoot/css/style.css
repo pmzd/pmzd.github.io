@@ -398,7 +398,13 @@ scrollbar Styles
 }
 .app_head_banner > img {
 	vertical-align: top;
-	height: 100%;
+	width: 100%;
+}
+.app_head_banner .innerpageBanner {
+	width: 100%;
+	height:100%;
+	-webkit-background-size: cover;
+	background-size: cover;
 }
 .app_head_banner .swiper-container{
 	height: 510px;
