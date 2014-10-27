@@ -320,7 +320,7 @@ scrollbar Styles
 	background: #191919;
 	height: 60px;
 	position: relative;
-	z-index: 99;
+	z-index: 9999999;
 }
 .app_head_nav .navLinks {
 	color: #fff;
@@ -3456,9 +3456,14 @@ and (max-width : 480px) {
 	.cait h2.cit {display: none;}
 	.cait .cait_textbox {display: none;}
 	.carousel_aboutus_wrap {height: 78px;}
+	.our_work_space {padding-left: 6px; padding-right: 6px;}
 	.our_work_space .owlist {
-		display: block;
+		/* display: block; */
 		padding-bottom: 6px;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0 6px 12px;
+		width: 50%;
 	}
 	.our_work_space .owlist img{
 		width: 100%;
@@ -3695,5 +3700,48 @@ and (max-width : 480px) {
 	.jjcc .jc_3:hover, 
 	.jjcc .jc_4:hover {
 		background-position: center center;
+	}
+	
+	.nu_news_list_wrap .nnl_imgblock {
+		clear: both;
+	}
+	.nu_news_list_wrap .nnl_textblock {
+		margin-left: 0;
+		float: left;
+	}
+	.video_list_headtext {padding: 10px;}
+	.cv_img_wrap {
+		padding-bottom: 10px;
+		width: 100%;
+		float: left;
+		margin-right: 0;
+		clear: both;
+	}
+	
+	.pvmoreshow {
+		margin-left: 0;
+		float: left;
+	}
+
+	.pvms {
+		position: relative;
+		float: left;
+		padding-left: 5px;
+		margin-left: 0;
+		box-sizing: border-box;
+		width: 33.333333333%;
+	}
+	.pvms .screenshot_pv {
+		position: absolute;
+		left: 5px;
+		bottom: 0;
+		width: auto;
+		right: 0px;
+	}
+	.pvms:first-child {
+		padding-left: 0;
+	}
+	.pvms:first-child .screenshot_pv {
+		left: 0;
 	}
 }
