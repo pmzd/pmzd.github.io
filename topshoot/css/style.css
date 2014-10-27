@@ -3719,6 +3719,7 @@ and (max-width : 480px) {
 	}
 	
 	.pvmoreshow {
+		width: 100%;
 		margin-left: 0;
 		float: left;
 	}
@@ -3743,5 +3744,13 @@ and (max-width : 480px) {
 	}
 	.pvms:first-child .screenshot_pv {
 		left: 0;
+	}
+	.pvms img {
+		width: 100%;
+		height: 80px;
+	}
+	.cvbox_text_top {
+		float: left;
+		width: 100%;
 	}
 }
