@@ -2,6 +2,7 @@
 require.config({
 	paths: {
 		"modernizr"			:"modernizr.custom",
+		"device"			:"device.min",
 		"jquery"			:"jquery-1.11.1.min",
 		"scalcHeight"		:"jay.plugins.scalcHeight",
 		"Tabs"				:"jay.plugins.tabs",
@@ -10,9 +11,10 @@ require.config({
 		"jay"				:"jay"
 	},
 	shim: {//模块依赖关系
-		'swiperscrollbar': {deps:['swiper']},
-		'swiper': {deps: ['jquery']},
-		'jay'  : {deps: ['swiper','swiperscrollbar']}
+		'device'			:{deps:['jquery']},
+		'swiperscrollbar'	:{deps:['swiper']},
+		'swiper'			:{deps:['jquery']},
+		'jay'  				:{deps:['swiper','swiperscrollbar']}
 	}
 });
 
@@ -33,6 +35,12 @@ require(
 	function (jquery,scalcHeight,swiper,swiperscrollbar,Tabs,jay){
 		$(function() {
 			jayfunction();
+			
+			window.onorientationchange = function() {
+				setTimeout(function() {
+					window.location.reload();
+				},160)
+			}
 		});
 	}
 );
