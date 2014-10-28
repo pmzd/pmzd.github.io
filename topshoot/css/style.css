@@ -3479,9 +3479,17 @@ and (max-width : 480px) {
 		width: 100%;
 	}
 	.cait_thumb {height: auto;}
-	.cait h2.cit {display: none;}
+	.cait h2.cit {
+		padding: 0;
+		line-height: 18px;
+		font-size: 12px;
+		text-align: center;
+	}
+	.cait h2.cit i {
+		display: none;	
+	}
 	.cait .cait_textbox {display: none;}
-	.carousel_aboutus_wrap {height: 78px;}
+	.carousel_aboutus_wrap {height: 90px;}
 	.our_work_space {padding-left: 6px; padding-right: 6px;}
 	.our_work_space .owlist {
 		/* display: block; */
