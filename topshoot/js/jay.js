@@ -280,8 +280,9 @@ function rflayout() {
 }
 
 //TEAM
-var teamaction = function($target, jsonURL) {
-	var $tar = $target;
+var teamRender = function($tar,data) {
+	var $tar = $tar;
+	var dataLength = data.length;
 	var cachetempla = $("<ul>").attr("id","cacheID");
 	var litempla= 
 			'<li class="team_list_li">'+
@@ -303,77 +304,134 @@ var teamaction = function($target, jsonURL) {
 			'	</div>'+
 			'	<div class="team_men_detail_ctr"></div>'+
 			'</li>';
+	for (var i=0; i< dataLength; i++ ){
+		
+		var newlitempla = litempla;
+		var newtp = $("<div>").attr("id","tpsd");
+		newtp.append(newlitempla);
+		newtp.find("span.cait_thumb").css("background-image", "url("+ data[i].proimgURL +")");
+		newtp.find(".cit font").html(data[i].proname);
+		newtp.find(".cit i").html(data[i].propro);
+		newtp.find(".cait_textbox p").html($.parseHTML(data[i].prodetaillite));
+		data[i].promail!==null?newtp.find(".cait_textbox").append('<a href="mailTo:'+ data[i].promail +'" class="cait_mail">'+data[i].promail+'</a>'):'';
+
+		eachLast = newtp.find(".team_list_li");
+		eachLast.data({
+			"name"     : data[i].proname,
+			"pro"      : data[i].propro,
+			"bigURL"   : (function() {if ( data[i].proimgURL2 === null) {return data[i].proimgURL;} else {return data[i].proimgURL2;}})(),
+			"datatext" : data[i].prodetail
+		});
+		//.on("click", function(e) {	
+			//debug
+			//console.log($(this).data())
+		//})
+		cachetempla.append(eachLast);
+	}
+	
+	var $thisinner,
+		lidata,
+		$allreciveEl,
+		$sendToElAll,
+		$sendToEl;
+	$tar.off(".teamact");
+	$tar.off(".tas");
+	$tar.html("").append(cachetempla.find(".team_list_li")).on("click.teamact", ".team_list_li", function(e){
+		$thisinner = $(this);
+		lidata = $thisinner.data();
+		$allreciveEl = $tar.find(".team_men_detail");
+		$sendToElAll = $thisinner.nextAll(".team_men_detail");
+		$sendToEl = $sendToElAll.eq(0);
+
+		if ( $thisinner.hasClass("cur") ) {
+			//$allreciveEl.addClass("hide");
+			$allreciveEl.slideUp(120);
+			$thisinner.removeClass("cur");
+		} else {
+			$thisinner.addClass("cur").siblings().removeClass("cur");
+			//$sendToEl.removeClass("hide");
+			//$allreciveEl.not( $sendToEl[0] ).addClass("hide");
+
+			$sendToEl.slideDown(150);
+			$allreciveEl.not( $sendToEl[0] ).slideUp(120);
+
+		}
+		$sendToEl
+				.find(".tdh i").html( lidata.name ).end()
+				.find(".tdh em").html(lidata.pro).end()
+				.find(".teamMenDetail_head").css("background-image", "url("+ lidata.bigURL +")").end()
+				.find(".team_men_detail_intro p").html( $.parseHTML(lidata.datatext) );
+	}).on("click.tas", ".team_men_detail_ctr", function() {
+		$sendToEl.slideUp(120);
+		$thisinner.removeClass("cur");
+	});
+	var items = $tar.find(".team_list_li");
+	var firstItem = items.eq(0);
+	var eachWidth = firstItem.width() + parseInt(firstItem.css("margin-right")) + parseInt(firstItem.css("margin-left"));
+	var eachLengh = Math.floor($tar.width()/eachWidth);
+	var RowLengh = Math.ceil(dataLength/eachLengh);
+	items.filter(":nth-of-type("+ eachLengh +"n)").after(showtempla);
+//end	
+}
+
+var teamaction = function($target,jsonURL,eachpageNUM) {
+	var $tar = $target;
 	if ($tar.length) {
 		$.getJSON(jsonURL).always(function(data) {
 			var dataLength = data.length;
-			for (var i=0; i< dataLength; i++ ){
-				var newlitempla = litempla;
-				var newtp = $("<div>").attr("id","tpsd");
-				newtp.append(newlitempla);
-				newtp.find("span.cait_thumb").css("background-image", "url("+ data[i].proimgURL +")");
-				newtp.find(".cit font").html(data[i].proname);
-				newtp.find(".cit i").html(data[i].propro);
-				newtp.find(".cait_textbox p").html($.parseHTML(data[i].prodetaillite));
-				data[i].promail!==null?newtp.find(".cait_textbox").append('<a href="mailTo:'+ data[i].promail +'" class="cait_mail">'+data[i].promail+'</a>'):'';
-				
-				eachLast = newtp.find(".team_list_li");
-				eachLast.data({
-					"name"     : data[i].proname,
-					"pro"      : data[i].propro,
-					"bigURL"   : (function() {if ( data[i].proimgURL2 === null) {return data[i].proimgURL;} else {return data[i].proimgURL2;}})(),
-					"datatext" : data[i].prodetail
-				});
-				//.on("click", function(e) {	
-					//debug
-					//console.log($(this).data())
-				//})
-				cachetempla.append(eachLast);
-				
+			var paging = false;
+			var pagese;
+			var temparry;
+			if (dataLength > eachpageNUM) {
+				paging = true;
+				pagese = Math.ceil(dataLength/eachpageNUM);
+				/*
+				console.log(paging);
+				console.log(dataLength);
+				console.log(eachpageNUM);
+				console.log(pagese);
+				*/
 			}
-			
-			var $thisinner,
-				lidata,
-				$allreciveEl,
-				$sendToElAll,
-				$sendToEl;
-			
-			$tar.html("").append(cachetempla.find(".team_list_li")).on("click.teamact", ".team_list_li", function(e){
-				$thisinner = $(this);
-				lidata = $thisinner.data();
-				$allreciveEl = $tar.find(".team_men_detail");
-				$sendToElAll = $thisinner.nextAll(".team_men_detail");
-				$sendToEl = $sendToElAll.eq(0);
-								
-				if ( $thisinner.hasClass("cur") ) {
-					//$allreciveEl.addClass("hide");
-					$allreciveEl.slideUp(120);
-					$thisinner.removeClass("cur");
-				} else {
-					$thisinner.addClass("cur").siblings().removeClass("cur");
-					//$sendToEl.removeClass("hide");
-					//$allreciveEl.not( $sendToEl[0] ).addClass("hide");
-					
-					$sendToEl.slideDown(150);
-					$allreciveEl.not( $sendToEl[0] ).slideUp(120);
-					
+			if (paging) {
+				$(".case_pagination").show();
+				var dataTarget = $(".cp_number").find(".pageses");
+				var dataTargetIn = $(".case_pagination").find(".cpc_prv");
+				var cacheDataPage = dataTarget.eq(0).clone().removeData().removeClass("cur");
+				var temps = $("<div>");
+				dataTarget.remove();
+				for (var n = 0; n<pagese; n++) {
+					temps.append(cacheDataPage.clone().html("0"+(n+1)))
 				}
-				$sendToEl
-						.find(".tdh i").html( lidata.name ).end()
-						.find(".tdh em").html(lidata.pro).end()
-						.find(".teamMenDetail_head").css("background-image", "url("+ lidata.bigURL +")").end()
-						.find(".team_men_detail_intro p").html( $.parseHTML(lidata.datatext) );
-			}).on("click", ".team_men_detail_ctr", function() {
-				$sendToEl.slideUp(120);
-				$thisinner.removeClass("cur");
-			});
-			var items = $tar.find(".team_list_li");
-			var firstItem = items.eq(0);
-			var eachWidth = firstItem.width() + parseInt(firstItem.css("margin-right")) + parseInt(firstItem.css("margin-left"));
-			var eachLengh = Math.floor($tar.width()/eachWidth);
-			var RowLengh = Math.ceil(dataLength/eachLengh);
-			
-			items.filter(":nth-of-type("+ eachLengh +"n)").after(showtempla);
-			//console.log(eachWidth,eachLengh,RowLengh);
+				temps.find("a").eq(0).addClass("cur");
+				dataTargetIn.after(temps.html());
+				dataTarget =  $(".cp_number").find(".pageses");
+				temparry = [];
+				for (var k=0; k< pagese; k++) {
+					temparry[k] = data.slice(eachpageNUM*k,eachpageNUM*(k + 1));
+					dataTarget.eq(k).data("arrys", temparry[k]).attr("id", "page_"+k)
+				}
+				dataTarget.on("click", function(e) {
+					var $this = $(this);
+					if( $this.data("arrys") ) {
+						var kdata = $this.data("arrys");
+						$this.addClass("cur").siblings().removeClass("cur");
+						teamRender($tar,kdata);
+					} else {
+						console.log("noData")
+					}
+				})
+				
+				console.log(temparry)
+			} else {
+				temparry = [];
+				temparry[0] = data;
+				$(".case_pagination").hide();
+			}
+			//进行加载完数据之后第一次渲染DOM元素
+			teamRender($tar,temparry[0]);
+		//get_JSON_End
+		}).error(function() {
+			alert("加载数据失败，请联系网站管理员。")
 		});
 	}
 	
@@ -422,8 +480,8 @@ var jayfunction = function() {
 	carouselsss_index($("#sssssss"));
 	//VideoBox
 	videoboxs("#vedioWrap");
-	//teamwork eg: teamaction(jQelement, jsonURL)
-	teamaction($(".team_list_ul"), "data/prolist.txt");
+	//teamwork eg: teamaction(目标的JQ对象, JSON的地址, 每页显示的数目)
+	teamaction($(".team_list_ul"), "data/prolist.txt", 8);
 	//响应式页面需求添加样式。
 	rflayout();
 	resmenu();
