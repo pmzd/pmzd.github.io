@@ -383,9 +383,11 @@ var teamaction = function($target, jsonURL) {
 function resmenu() {
 	var $ww = $win || $(window); //cache
 	function initmenu() {
-		if ($ww.width() <= 481) {
-			$doc.on("click.pso", ".online_consulting", function() {
+		if (device.mobile()) {
+			$doc.on("touchend.pso", ".online_consulting", function(e) {
+				e.stopPropagation();
 				$(document.getElementsByClassName("app_head_nav")).slideToggle(120);
+				e.preventDefault;
 			})
 		} else {
 			$doc.off("click.pso");
