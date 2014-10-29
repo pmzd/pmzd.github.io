@@ -384,10 +384,9 @@ function resmenu() {
 	var $ww = $win || $(window); //cache
 	function initmenu() {
 		if (device.mobile()) {
-			$doc.on("touchend.pso", ".online_consulting", function(e) {
+			$doc.on("click.pso", ".online_consulting", function(e) {
 				e.stopPropagation();
-				$(document.getElementsByClassName("app_head_nav")).slideToggle(120);
-				e.preventDefault;
+				$(document.getElementsByClassName("app_head_nav")).stop(true).slideToggle(120);
 			})
 		} else {
 			$doc.off("click.pso");

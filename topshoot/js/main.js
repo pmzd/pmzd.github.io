@@ -7,7 +7,8 @@ require.config({
 		"scalcHeight"		:"jay.plugins.scalcHeight",
 		"Tabs"				:"jay.plugins.tabs",
 		"swiper"			:"swiper/idangerous.swiper.min",
-		"swiperscrollbar"	:"swiper/idangerous.swiper.scrollbar.min",	
+		"swiperscrollbar"	:"swiper/idangerous.swiper.scrollbar.min",
+		"fastclick"			:"fastclick",
 		"jay"				:"jay"
 	},
 	shim: {//模块依赖关系
@@ -21,6 +22,11 @@ require.config({
 //配置页面加载模块
 require(['modernizr'],function(modernizr) {
 	!Modernizr.rgba?window.location="np.html":'';
+});
+
+require(["fastclick"], function(fastclick) {
+	var Fastclick = require("fastclick");
+	Fastclick.attach(document.body);
 });
 
 require(
