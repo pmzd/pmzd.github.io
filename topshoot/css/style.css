@@ -712,6 +712,8 @@ scrollbar Styles
 	font-size: 12px;
 	line-height: 18px;
 	color: #333333;
+	max-height: 90px;
+	overflow: hidden;
 }
 .cait_mail {
 	text-decoration: underline;

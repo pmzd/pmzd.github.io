@@ -320,7 +320,7 @@ var teamRender = function($tar,data) {
 			"name"     : data[i].proname,
 			"pro"      : data[i].propro,
 			"bigURL"   : (function() {if ( data[i].proimgURL2 === null) {return data[i].proimgURL;} else {return data[i].proimgURL2;}})(),
-			"datatext" : data[i].prodetail
+			"datatext" : (function() {if ( data[i].prodetail === null || data[i].prodetail === "") {return data[i].prodetaillite;} else {return data[i].prodetail;}})()
 		});
 		//.on("click", function(e) {	
 			//debug
@@ -371,13 +371,22 @@ var teamRender = function($tar,data) {
 	var eachLengh = Math.floor($tar.width()/eachWidth);
 	var RowLengh = Math.ceil(dataLength/eachLengh);
 	items.filter(":nth-of-type("+ eachLengh +"n)").after(showtempla);
+	if ($(".team_men_detail").length < RowLengh ) {
+		items.filter(":last-child").after(showtempla);
+	}
 //end	
 }
 
 var teamaction = function($target,jsonURL,eachpageNUM) {
 	var $tar = $target;
 	if ($tar.length) {
-		$.getJSON(jsonURL).always(function(data) {
+		$.ajax({
+			type: "get",
+			url: jsonURL,
+			dataType: "jsonp",
+			jsonpCallback:"callback"
+		}).done(function(data) {
+		//$.getJSON(jsonURL).always(function(data) {
 			var dataLength = data.length;
 			var paging = false;
 			var pagese;
@@ -481,7 +490,8 @@ var jayfunction = function() {
 	//VideoBox
 	videoboxs("#vedioWrap");
 	//teamwork eg: teamaction(目标的JQ对象, JSON的地址, 每页显示的数目)
-	teamaction($(".team_list_ul"), "data/prolist.txt", 8);
+	//teamaction($(".team_list_ul"), "data/prolist.txt", 8);
+	teamaction($(".team_list_ul"), "http://topshoot.skychf.com/teamjson", 8);
 	//响应式页面需求添加样式。
 	rflayout();
 	resmenu();
