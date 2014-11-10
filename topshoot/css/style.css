@@ -1820,6 +1820,7 @@ h2.cdr_h2 {
 	display: block;
 	width: 100%;
 	height: 98px;
+	background: center center no-repeat;
 	-webkit-background-size: contain;
 	background-size: contain;
 }
