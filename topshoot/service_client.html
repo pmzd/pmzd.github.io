@@ -159,7 +159,7 @@
 					</div>
 					<div class="service_unit_right">
 						<ul class="su_cos_list_w clearfix">
-							<li class="su_cos_items"><a href="#"><img src="images/mc-1.png" alt=""></a></li>
+							<li class="su_cos_items"><a href="#" style="background-image:url('images/mc-1.png')"><!--<img src="images/mc-1.png" alt="">--></a></li>
 						</ul>
 					</div>
 					<script>
@@ -173,7 +173,7 @@
 									var totalCus = 23;
 									var temp = "";
 									for (var i=1; i < cloneNum; i++ ) {
-										temp = temp + '<li class="su_cos_items"><a href="#"><img src="images/mc-'+  parseInt(Math.floor(Math.random()*totalCus)+1)  +'.png" alt=""></a></li>'
+										temp = temp + '<li class="su_cos_items"><a href="#" style="background-image:url(\'images/mc-'+  parseInt(Math.floor(Math.random()*totalCus)+1)  +'.png\')"></a></li>'
 									}
 									$appendTarget.append(temp);
 								}
