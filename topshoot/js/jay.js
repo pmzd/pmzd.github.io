@@ -464,6 +464,24 @@ function resmenu() {
 		initmenu();
 	});
 }
+//右侧漂浮动作
+function rightside () {
+	var obj = $(".pageFlortEl");
+	var clsbtn = ".clsbtn";
+	var scrtop = ".qbarrow-u";
+	var scrbot = ".qbarrow-d";
+	var obj_cls_btn = obj.find(clsbtn);
+	var obj_scroll_top = obj.find(scrtop);
+	var obj_scroll_bot = obj.find(scrbot);
+	obj.on("click", clsbtn, function() {
+		obj.remove();
+	}).on("click", scrtop,function() {
+		document.body.scrollTop = 0
+	}).on("click", scrbot,function() {
+		document.body.scrollTop =document.body.scrollHeight
+	});
+}
+
 
 var jayfunction = function() {
 	//定义变量
@@ -495,4 +513,6 @@ var jayfunction = function() {
 	//响应式页面需求添加样式。
 	rflayout();
 	resmenu();
+	//右侧
+	rightside();
 };

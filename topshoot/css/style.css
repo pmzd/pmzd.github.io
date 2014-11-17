@@ -3523,7 +3523,7 @@ and (max-width : 480px) {
 	.foot_copyright {padding-right: 0; background: none;}
 	.cin_eachBlock {display: block; margin:0 10px;}
 	.cin_links {background: none;line-height: 24px; min-width: 210px; text-align: left;}
-	.cin_eachBlock:nth-of-type(2) .cin_links{padding-top: 20px;}
+	.cin_eachBlock:nth-of-type(2) .cin_links{padding-top: 0px;}
 	.case_show_wrap {width: 100%;}
 	.case_show_items_wrap {width: 50%;}
 	.case_thumb {height: 90px;}
@@ -3820,8 +3820,9 @@ and (max-width : 480px) {
 		margin-right: 0;
 	}
 	.vdr_share_links_wrap {
-		padding-left: 0;
+		padding-left: 18px;
 		overflow: hidden;
+		padding-right: 0;
 	}
 	.vdr_share_links_wrap a{
 		display: block;
@@ -3836,5 +3837,9 @@ and (max-width : 480px) {
 	}
 	.vdr_share_links_wrap2 {
 		display: none;
+	}
+	#youkuplayer {
+		width: 100% !important;
+		height: 320px !important;
 	}
 }
