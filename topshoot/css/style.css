@@ -3842,4 +3842,7 @@ and (max-width : 480px) {
 		width: 100% !important;
 		height: 320px !important;
 	}
+	.cvbox_text_top {
+		height:auto !important;
+	}
 }
